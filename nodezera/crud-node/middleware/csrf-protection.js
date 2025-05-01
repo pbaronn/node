@@ -6,7 +6,7 @@ const csrfProtection = csrf({
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',
-        maxAge: 3600000 // 1 hora
+        maxAge: 3600000 
     }
 });
 
