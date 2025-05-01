@@ -42,9 +42,19 @@ git clone
 
     Como Testar
 npm start
-node index.js
-node server.js
 
-Intruções das Injeções em
+-----
+Com Xampp ativo
+
+No vs code -> terminal -> node index.js
+
+--------
+
+No postman
+
+GET http://localhost:3000
+
+
+    Intruções das Injeções em
 https://github.com/pbaronn/neyn2_node/blob/main/Pentesting.pdf
 
