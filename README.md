@@ -95,8 +95,87 @@ Considere usar o npm audit fix se houver vulnerabilidades detectadas.
 No postman
 
 GET http://localhost:3000
-
-
     Intruções das Injeções em
 https://github.com/pbaronn/neyn2_node/blob/main/Pentesting.pdf
+
+# Versão 2.0 - Com Sistema de Autenticação com JWT e MySQL
+
+Este projeto é uma API RESTful construída com **Node.js**, **Express.js** e **MySQL**, que implementa autenticação com JWT, proteção de rotas e controle de acesso por ID de usuário.
+
+## Como Rodar o Projeto Localmente
+
+### 1. **Pré-requisitos**
+
+- [Node.js](https://nodejs.org) instalado
+- [MySQL](https://www.mysql.com/) instalado e em execução
+
+---
+
+### 2. **Baixar o arquivo nodezerav2.zip**
+- Extraia a pasta matriz do arquivo zipado
+
+### 3. **Instalar dependências**
+```bash
+npm install
+```
+### 3. **Configurar as variáveis de ambiente**
+- Crie um arquivo .env na raiz do projeto com o seguinte conteúdo:
+```env
+PORT=3000
+DB_HOST=localhost
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
+DB_NAME=seu_banco
+JWT_SECRET=sua_chave_secreta
+```
+### 4. **Importar o banco de dados**
+- Execute o arquivo schema.sql no seu MySQL:
+```bash
+mysql -u seu_usuario -p seu_banco < schema.sql
+``` 
+### 5. **Iniciar o servidor**
+```bash
+npm start
+```
+## Para Rodar o Servidor
+- Digite o comando:
+```bash
+node server.js
+```
+## Verificando a API no Navegador
+### Verifique se o servidor está rodando corretamente. 
+Se o terminal mostrar algo como "Server is running on http://localhost:3000", 
+você pode acessar a API pelo navegador:
+http://localhost:3000
+
+## Rotas Principais
+### Autenticação (/api)
+```sql
+POST /api/register – Cadastra um novo usuário
+POST /api/login – Retorna um token JWT
+```
+## Usuário (/api/users)
+```sql
+GET /api/users – Lista usuários (token JWT necessário)
+PUT /api/users/:id – Atualiza seus dados (token + ID compatível)
+DELETE /api/users/:id – Exclui seu usuário (token + ID compatível)
+```
+Use o token retornado no login para autenticar as rotas protegidas.
+
+## Testando com Postman
+- Faça login via POST /api/login
+- Copie o token retornado
+- Vá em Headers da requisição protegida e adicione:
+```sql
+Key: Authorization
+Value: Bearer SEU_TOKEN_AQUI
+```
+--------------------------------------------------------------------------
+## Boas Práticas Utilizadas
+- Separação de responsabilidades (rotas, middleware, config, etc.)
+- Validação de permissões (apenas o próprio usuário pode editar/excluir)
+- Uso de variáveis de ambiente com .env
+- Middleware global de tratamento de erros
+
+
 
