@@ -1,5 +1,7 @@
 # Proteção Completa em Node.js
 
+Dereck Conink, Maria A. Giuliari, Mariele Vieira e Pâmela Baron
+
 Este projeto demonstra a implementação de proteções contra as principais vulnerabilidades web:
  
 SQL/NoSQL Injection
